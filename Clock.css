@@ -1,0 +1,103 @@
+body{
+    margin: 0;
+    padding: 0;
+    background:linear-gradient(to right,hsl(186, 56%, 52%),hsl(198, 68%, 65%));
+}
+*{
+    box-sizing: border-box;
+    font-family: cursive;
+}
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.clock{
+    width: 400px;
+    height: 400px;
+    background-color: rgba(100, 148, 237, 0.342);
+    border-radius: 50%;
+    border:1px solid rgb(91, 56, 219);
+    position: relative;
+}
+.clock .number{
+    --rotation:0;
+    position:absolute;
+    width:100%;
+    height:100%;
+    /* background-color: red; */
+    text-align: center;
+    transform: rotate(var(--rotation));
+}
+.clock .number1{--rotation:30deg;}
+.clock .number2{--rotation:60deg;}
+.clock .number3{--rotation:88deg;}
+.clock .number4{--rotation:118deg;}
+.clock .number5{--rotation:148deg;}
+.clock .number6{--rotation:179deg;}
+.clock .number7{--rotation:210deg;}
+.clock .number8{--rotation:240deg;}
+.clock .number9{--rotation:270deg;}
+.clock .number10{--rotation:299deg;}
+.clock .number11{--rotation:330deg;}
+.clock .number12{--rotation:358deg;}
+.clock .number span{
+    --rotator:0;
+    position: absolute;
+    /* background-color: violet; */
+    transform: rotate(var(--rotator));
+}
+.clock .number1 span{--rotator:-30deg;}
+.clock .number2 span{--rotator:-60deg;}
+.clock .number3 span{--rotator:-90deg;}
+.clock .number4 span{--rotator:-120deg;}
+.clock .number5 span{--rotator:-150deg;}
+.clock .number6 span{--rotator:-180deg;}
+.clock .number7 span{--rotator:-210deg;}
+.clock .number8 span{--rotator:-240deg;}
+.clock .number9 span{--rotator:-270deg;}
+.clock .number10 span{--rotator:-300deg;}
+.clock .number11 span{--rotator:-330deg;}
+.hand{
+    --rotations:0;
+    position:absolute;
+    bottom:50%;
+    left:50%;
+    border-top-left-radius:6px;
+    z-index:10;
+    border-top-right-radius:6px;
+    border:1px solid white;
+    background-color: rgb(49, 19, 216);
+    transform: translateY(5px);
+    transform-origin: bottom;
+    transform: rotate(calc(var(--rotations)*1deg));
+}
+.second{
+    width: 3px;
+    height:45%;
+    background-color: red;
+    z-index: 5;
+}
+.minute{
+    width:7px;
+    height:40%;
+    background-color: black;
+    z-index:5;
+}
+.hour{
+    width:10px;
+    height:32%;
+    background-color:black;
+}
+.hour::after{
+    content:'';
+    position:absolute;
+    z-index: 100;
+    top:90%;
+    left: -10px;
+    width:30px;
+    height:30px;
+    background-color: black;
+    border-radius: 50%;
+}
